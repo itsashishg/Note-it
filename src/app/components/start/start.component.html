@@ -6,12 +6,12 @@
                     style="margin: auto;text-align: center; margin-top: 2%; ">
                     <mat-form-field [floatLabel]="'never'">
                         <mat-label>Start Typing here</mat-label>
-                        <input matInput placeholder="Placeholder" [(ngModel)]="title">
+                        <input matInput placeholder="Placeholder" [(ngModel)]="currentNote.title">
                     </mat-form-field>
                     <div *ngIf="showContent">
                         <mat-form-field class="example-full-width" appearance="fill">
                             <mat-label>Leave a comment</mat-label>
-                            <textarea matInput [(ngModel)]="content"></textarea>
+                            <textarea matInput [(ngModel)]="currentNote.content"></textarea>
                         </mat-form-field>
                         <button mat-flat-button (click)="save()">Save</button>
                     </div>

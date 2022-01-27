@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 export interface Data {
   title: string;
   content: string;
-  date: Date;
+  date?: Date;
 }
 
 @Component({
@@ -13,11 +13,10 @@ export interface Data {
 })
 export class StartComponent implements OnInit {
   storedNotes: Data[] = [];
-  title: string = '';
-  content: string = '';
-  showContent: boolean = true;
-  noActionDone: boolean = false;
-  
+  public currentNote: Data = { title: '', content: '' }
+  public showContent: boolean = true;
+  public noActionDone: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -25,7 +24,7 @@ export class StartComponent implements OnInit {
   }
 
   isContentFilled() {
-    if (this.title.length !== 0)
+    if (this.currentNote.title.length !== 0)
       this.showContent = true;
     else
       this.showContent = true;
@@ -39,7 +38,7 @@ export class StartComponent implements OnInit {
   }
 
   save() {
-    let tmp = { title: this.title, content: this.content, date: new Date() };
+    let tmp = { title: this.currentNote.title, content: this.currentNote.content, date: new Date() };
     console.log('Storing note:', this.storedNotes.push(tmp));
     console.log(this.storedNotes)
     localStorage.setItem('notes', JSON.stringify(this.storedNotes));

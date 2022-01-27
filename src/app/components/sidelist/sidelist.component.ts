@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Data } from '../start/start.component';
+import { Data, StartComponent } from '../start/start.component';
 
 @Component({
   selector: 'app-sidelist',
@@ -12,7 +11,7 @@ export class SidelistComponent implements OnInit {
   isExpanded: boolean = false;
   data!: Data;
   storedNotes: Data[] = [];
-  constructor(private router: Router) { }
+  constructor(private start: StartComponent) { }
 
   ngOnInit() {
     this.getStoredNotes();
@@ -27,5 +26,11 @@ export class SidelistComponent implements OnInit {
     else {
       console.log('No previously stored notes found...');
     }
+  }
+
+  selectNote(row: Data) {
+    this.start.currentNote = row;
+    this.start.noActionDone = true;
+    this.start.showContent = true;
   }
 }
