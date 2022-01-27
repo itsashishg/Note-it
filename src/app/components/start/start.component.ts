@@ -39,18 +39,8 @@ export class StartComponent implements OnInit {
 
   save() {
     let tmp = { title: this.currentNote.title, content: this.currentNote.content, date: new Date() };
-    console.log('Storing note:', this.storedNotes.push(tmp));
-    console.log(this.storedNotes)
+    this.storedNotes.push(tmp);
     localStorage.setItem('notes', JSON.stringify(this.storedNotes));
   }
-
-  // @HostListener('mouseover') onMouseOver() {
-  //   this.isExpanded = true;
-  //   console.log("mouseover")
-  // }
-
-  // @HostListener('mouseout') onMouseOut() {
-  //   this.isExpanded = false;
-  // }
 
 }

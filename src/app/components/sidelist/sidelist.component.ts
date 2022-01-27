@@ -22,7 +22,7 @@ export class SidelistComponent implements OnInit {
     this.getStoredNotes();
   }
 
-  getStoredNotes() {
+  public getStoredNotes() {
     let fetchedFromStorage: string | null = localStorage.getItem('notes');
     if (fetchedFromStorage !== null) {
       let tmp: Data[] = JSON.parse(fetchedFromStorage);

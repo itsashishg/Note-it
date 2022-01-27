@@ -1,4 +1,4 @@
-<app-sidelist>
+<app-sidelist #sidelist>
     <div class="container-fluid">
         <div *ngIf="noActionDone" #startWritingBlock style="height: 100%;">
             <div class="notes-body">
@@ -7,7 +7,7 @@
                         <mat-form-field [floatLabel]="'never'">
                             <input matInput placeholder="Title of your masterpiece" [(ngModel)]="currentNote.title">
                         </mat-form-field>
-                        <button mat-stroked-button (click)="save()">Save</button>
+                        <button mat-stroked-button (click)="save();sidelist.getStoredNotes()">Save</button>
                     </p>
                     <div>
                         <mat-form-field id="notesContent" class="notes-content" appearance="fill">
