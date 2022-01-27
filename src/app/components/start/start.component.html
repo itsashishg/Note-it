@@ -2,18 +2,18 @@
     <div class="container-fluid">
         <div *ngIf="noActionDone" #startWritingBlock style="height: 100%;">
             <div class="notes-body">
-                <div (mouseover)="showContent=true" (mouseout)="isContentFilled()"
-                    style="margin: auto;text-align: center; margin-top: 2%; ">
-                    <mat-form-field [floatLabel]="'never'">
-                        <mat-label>Start Typing here</mat-label>
-                        <input matInput placeholder="Placeholder" [(ngModel)]="currentNote.title">
-                    </mat-form-field>
-                    <div *ngIf="showContent">
-                        <mat-form-field class="example-full-width" appearance="fill">
-                            <mat-label>Leave a comment</mat-label>
-                            <textarea matInput [(ngModel)]="currentNote.content"></textarea>
+                <div>
+                    <p class="title-header">
+                        <mat-form-field [floatLabel]="'never'">
+                            <input matInput placeholder="Title of your masterpiece" [(ngModel)]="currentNote.title">
                         </mat-form-field>
-                        <button mat-flat-button (click)="save()">Save</button>
+                        <button mat-stroked-button (click)="save()">Save</button>
+                    </p>
+                    <div>
+                        <mat-form-field id="notesContent" class="notes-content" appearance="fill">
+                            <textarea matInput placeholder="Start Writing..." [(ngModel)]="currentNote.content"
+                                cdkTextareaAutosize></textarea>
+                        </mat-form-field>
                     </div>
                 </div>
             </div>
