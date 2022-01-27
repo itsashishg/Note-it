@@ -1,8 +1,11 @@
 <mat-sidenav-container autosize [hasBackdrop]="false">
-    <mat-sidenav #drawer mode="side" class="sidenav" opened="false">
+    <mat-sidenav #drawer mode="side" class="sidenav" opened="true">
         <div id="navbar" class="sidenav">
-
-            notes goes here
+            <div>
+                <div class="col-sm-4" *ngFor="let note of storedNotes">
+                    <p>{{note.title}}</p>
+                </div>
+            </div>
         </div>
     </mat-sidenav>
     <!-- <mat-sidenav-content> -->

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-interface Data {
+export interface Data {
   title: string;
   content: string;
   date: Date;
@@ -21,7 +21,7 @@ export class StartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.getStoredNotes();
+    // this.getStoredNotes();
   }
 
   isContentFilled() {
@@ -31,16 +31,7 @@ export class StartComponent implements OnInit {
       this.isExpanded = false;
   }
 
-  getStoredNotes() {
-    let fetchedFromStorage: string | null = localStorage.getItem('notes');
-    if (fetchedFromStorage !== null) {
-      let tmp: Data = JSON.parse(fetchedFromStorage);
-      console.log(tmp);
-    }
-    else {
-      console.log('No previously stored notes found...');
-    }
-  }
+
 
   save() {
     this.data = { title: this.title, content: this.content, date: new Date() };

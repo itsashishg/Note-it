@@ -1,6 +1,5 @@
 <app-sidelist>
     <div class="container-fluid">
-
         <div (mouseover)="isExpanded=true" (mouseout)="isContentFilled()"
             style="margin: auto;text-align: center; margin-top: 2%; ">
             <mat-form-field [floatLabel]="'never'">
@@ -12,8 +11,8 @@
                     <mat-label>Leave a comment</mat-label>
                     <textarea matInput [(ngModel)]="content"></textarea>
                 </mat-form-field>
+                <button mat-flat-button (click)="save()">Save</button>
             </div>
-            <button mat-flat-button (click)="save()">Save</button>
         </div>
     </div>
 </app-sidelist>
