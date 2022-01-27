@@ -12,30 +12,35 @@ export interface Data {
   styleUrls: ['./start.component.css']
 })
 export class StartComponent implements OnInit {
-
-  data!: Data;
   storedNotes: Data[] = [];
   title: string = '';
   content: string = '';
-  isExpanded: boolean = false;
+  showContent: boolean = true;
+  noActionDone: boolean = false;
+  
   constructor() { }
 
   ngOnInit() {
-    // this.getStoredNotes();
+    this.getStoredNotes();
   }
 
   isContentFilled() {
     if (this.title.length !== 0)
-      this.isExpanded = true;
+      this.showContent = true;
     else
-      this.isExpanded = false;
+      this.showContent = true;
   }
 
-
+  getStoredNotes() {
+    let fetchedFromStorage: string | null = localStorage.getItem('notes');
+    if (fetchedFromStorage !== null) {
+      this.storedNotes = JSON.parse(fetchedFromStorage);
+    }
+  }
 
   save() {
-    this.data = { title: this.title, content: this.content, date: new Date() };
-    console.log('Storing note:', this.storedNotes.push(this.data));
+    let tmp = { title: this.title, content: this.content, date: new Date() };
+    console.log('Storing note:', this.storedNotes.push(tmp));
     console.log(this.storedNotes)
     localStorage.setItem('notes', JSON.stringify(this.storedNotes));
   }

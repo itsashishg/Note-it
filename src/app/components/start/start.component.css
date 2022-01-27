@@ -1,4 +1,23 @@
+.container-fluid {
+  height: 88%;
+}
+
 mat-form-field {
   width: 50%;
   margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  margin: 0;
+  background: #fff;
+}
+
+.notes-body {
+  height: 100%;
+  width: 100%;
+  background: #fff;
 }
