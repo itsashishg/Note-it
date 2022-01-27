@@ -1,0 +1,15 @@
+.is-active {
+  background-color: #345d87;
+}
+
+mat-sidenav-container {
+  height: 100%;
+}
+
+p {
+  text-align: center;
+}
+
+mat-sidenav {
+  width: 15%;
+}
