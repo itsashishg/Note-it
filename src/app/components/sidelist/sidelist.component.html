@@ -1,17 +1,22 @@
 <mat-sidenav-container autosize [hasBackdrop]="false">
-    <mat-sidenav #drawer mode="side" class="sidenav" opened="true">
+    <mat-sidenav #drawer mode="side" class="sidenav" [attr.role]="(isHandset | async) ? 'dialog' : 'navigation'"
+        [mode]="'side'" [opened]="isExpanded">
         <div id="navbar" class="sidenav">
-            <div>
+            <div *ngIf="storedNotes.length !== 0;else no_content">
                 <div (click)="selectNote(note)" *ngFor="let note of storedNotes">
                     <p>{{note.title}}</p>
                 </div>
             </div>
+            <ng-template #no_content>
+                No notes found...
+            </ng-template>
         </div>
     </mat-sidenav>
     <!-- <mat-sidenav-content> -->
     <mat-toolbar>
 
-        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <button type="button" aria-label="Toggle sidenav" *ngIf="isHandset | async" mat-icon-button
+            (click)="drawer.toggle()">
             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
 

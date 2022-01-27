@@ -30,7 +30,7 @@ export class StartComponent implements OnInit {
       this.showContent = true;
   }
 
-  getStoredNotes() {
+  public getStoredNotes() {
     let fetchedFromStorage: string | null = localStorage.getItem('notes');
     if (fetchedFromStorage !== null) {
       this.storedNotes = JSON.parse(fetchedFromStorage);
