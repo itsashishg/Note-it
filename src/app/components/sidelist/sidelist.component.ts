@@ -3,6 +3,7 @@ import { Data, StartComponent } from '../start/start.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { StorerService } from 'src/app/services/storer.service';
 
 @Component({
   selector: 'app-sidelist',
@@ -16,7 +17,7 @@ export class SidelistComponent implements OnInit {
   storedNotes: Data[] = [];
 
   isHandset: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(map(result => result.matches), shareReplay());
-  constructor(private breakpointObserver: BreakpointObserver, private start: StartComponent) { }
+  constructor(private breakpointObserver: BreakpointObserver, private start: StartComponent, private storerService: StorerService) { }
 
   ngOnInit() {
     this.getStoredNotes();
@@ -25,7 +26,7 @@ export class SidelistComponent implements OnInit {
   public getStoredNotes() {
     let fetchedFromStorage: string | null = localStorage.getItem('notes');
     if (fetchedFromStorage !== null) {
-      let tmp: Data[] = JSON.parse(fetchedFromStorage);
+      let tmp: Data[] = JSON.parse(this.storerService.get('123456$#@$^@1ERF', fetchedFromStorage));
       this.storedNotes = tmp;
       this.start.getStoredNotes();
     }

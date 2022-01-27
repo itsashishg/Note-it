@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorerService } from 'src/app/services/storer.service';
 
 export interface Data {
   title: string;
@@ -17,7 +18,7 @@ export class StartComponent implements OnInit {
   public showContent: boolean = true;
   public noActionDone: boolean = false;
 
-  constructor() { }
+  constructor(private storerService: StorerService) { }
 
   ngOnInit() {
     this.getStoredNotes();
@@ -33,14 +34,14 @@ export class StartComponent implements OnInit {
   public getStoredNotes() {
     let fetchedFromStorage: string | null = localStorage.getItem('notes');
     if (fetchedFromStorage !== null) {
-      this.storedNotes = JSON.parse(fetchedFromStorage);
+      this.storedNotes = JSON.parse(this.storerService.get('123456$#@$^@1ERF', fetchedFromStorage));
     }
   }
 
   save() {
     let tmp = { title: this.currentNote.title, content: this.currentNote.content, date: new Date() };
     this.storedNotes.push(tmp);
-    localStorage.setItem('notes', JSON.stringify(this.storedNotes));
+    localStorage.setItem('notes', this.storerService.set('123456$#@$^@1ERF', JSON.stringify(this.storedNotes)));
   }
 
 }
