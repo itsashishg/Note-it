@@ -10,10 +10,7 @@
                         <button mat-stroked-button (click)="save();sidelist.getStoredNotes()">Save</button>
                     </p>
                     <div>
-                        <mat-form-field id="notesContent" class="notes-content" appearance="fill">
-                            <textarea matInput placeholder="Start Writing..." [(ngModel)]="currentNote.content"
-                                cdkTextareaAutosize></textarea>
-                        </mat-form-field>
+                        <quill-editor [modules]="toolbarConfigs" [(ngModel)]="currentNote.content"></quill-editor>
                     </div>
                 </div>
             </div>
