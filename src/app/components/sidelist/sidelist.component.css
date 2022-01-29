@@ -81,7 +81,7 @@ mat-toolbar .mat-toolbar-row,
 }
 
 .sidenotes {
-  height: 90vh;
+  height: calc(100% - 80px);
   overflow: auto;
 }
 
