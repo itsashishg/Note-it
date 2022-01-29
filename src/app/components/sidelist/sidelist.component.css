@@ -20,7 +20,7 @@ mat-sidenav {
 }
 
 .noNotesImg {
-  height: 90vh;
+  height: calc(100% - 85px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,7 +81,7 @@ mat-toolbar .mat-toolbar-row,
 }
 
 .sidenotes {
-  height: calc(100% - 80px);
+  height: calc(100% - 85px);
   overflow: auto;
 }
 
