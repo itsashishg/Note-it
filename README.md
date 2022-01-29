@@ -1,7 +1,7 @@
 # NoteIt
 
 Side Project to make notes offline.
-Start Date: Jan 27th,2022.
+    Start Date: Jan 27th,2022.
 
 ## Features
 
@@ -10,5 +10,6 @@ Start Date: Jan 27th,2022.
 - Has option to store pictures too.
 - Priority and Folder options (Future update).
 - Share notes (Future update).
-- Styling options (Future update).
+- Styling options.
 - Dark mode (Future update).
+- Hide notes (Future update).

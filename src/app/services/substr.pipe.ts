@@ -9,7 +9,7 @@ export class SubstrPipe implements PipeTransform {
     if (!text) {
       return text;
     }
-    let without_html = text.replace(/<(?:.|\n)*?>/gm, ' ');
+    let without_html = text.replace(/<(?:.|\n)*?>/gm, '');
 
     return without_html.substring(0,10).concat('...');
   }
