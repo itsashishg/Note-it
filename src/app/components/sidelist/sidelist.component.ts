@@ -41,4 +41,10 @@ export class SidelistComponent implements OnInit {
     this.start.noActionDone = true;
     this.start.showContent = true;
   }
+
+  deleteNote(index: number) {
+    console.log('Delete', index);
+    this.storedNotes.splice(index, 1);
+    localStorage.setItem('notes', this.storerService.set('123456$#@$^@1ERF', JSON.stringify(this.storedNotes)));
+  }
 }

@@ -3,15 +3,22 @@
         [mode]="'side'" [opened]="isExpanded">
         <div id="navbar" class="sidenav">
             <div *ngIf="storedNotes.length !== 0;else no_content">
-                <div (click)="selectNote(note)" *ngFor="let note of storedNotes">
-                    <div class="notesList">
-                        <div class="box-header">
-                            <p>{{note.title}}</p>
-                            <p>{{note.date | date:'medium'}}</p>
-                        </div>
-                        <div class="box-body">
-                            <p>{{note.content | substr}}</p>
-                        </div>
+                <div *ngFor="let note of storedNotes;let i=index" class="notesList my-1">
+                    <div class="box-body" (click)="selectNote(note)">
+                        <span>
+                            <p class="box-body-title">{{note.title}}</p>
+                            <p class="box-body-date">{{note.date | date:'medium'}}</p>
+                        </span>
+                        <span>{{note.content | substr}}</span>
+                    </div>
+                    <div class="box-option">
+                        <mat-icon [matMenuTriggerFor]="menu">more_vert</mat-icon>
+                        <mat-menu #menu="matMenu">
+                            <button (click)="deleteNote(i)" mat-menu-item>
+                                <mat-icon>delete</mat-icon>
+                                <span>Delete</span>
+                            </button>
+                        </mat-menu>
                     </div>
                 </div>
             </div>

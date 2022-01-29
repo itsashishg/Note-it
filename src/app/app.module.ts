@@ -14,7 +14,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { QuillModule } from 'ngx-quill';
-import { SubstrPipe } from './services/substr.pipe'
+import { SubstrPipe } from './services/substr.pipe';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SubstrPipe } from './services/substr.pipe'
     MatFormFieldModule,
     MatInputModule,
     QuillModule.forRoot(),
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
