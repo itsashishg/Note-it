@@ -66,3 +66,15 @@ mat-toolbar .mat-toolbar-row,
 .mat-toolbar-single-row {
   height: clamp(20px, 8%, 9%);
 }
+
+@media (max-width: 767px) {
+  mat-sidenav {
+    width: 55%;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1070px) {
+  mat-sidenav {
+    width: 20%;
+  }
+}
