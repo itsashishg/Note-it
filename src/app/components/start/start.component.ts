@@ -66,7 +66,7 @@ export class StartComponent implements OnInit {
 
   changedEditor(event: EditorChangeContent | EditorChangeSelection) {
     let tmp: string = event.editor.getText();
-    this.wordsCount = tmp.split(' ').length - 1;
+    this.wordsCount = tmp.split(' ').length;
   }
 
 }

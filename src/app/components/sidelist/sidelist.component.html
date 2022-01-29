@@ -4,7 +4,15 @@
         <div id="navbar" class="sidenav">
             <div *ngIf="storedNotes.length !== 0;else no_content">
                 <div (click)="selectNote(note)" *ngFor="let note of storedNotes">
-                    <p>{{note.title}}</p>
+                    <div class="notesList">
+                        <div class="box-header">
+                            <p>{{note.title}}</p>
+                            <p>{{note.date | date:'medium'}}</p>
+                        </div>
+                        <div class="box-body">
+                            <p>{{note.content | substr}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <ng-template #no_content>

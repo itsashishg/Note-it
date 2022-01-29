@@ -13,13 +13,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { QuillModule } from 'ngx-quill'
+import { QuillModule } from 'ngx-quill';
+import { SubstrPipe } from './services/substr.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
     StartComponent,
-    SidelistComponent
+    SidelistComponent,
+    SubstrPipe
   ],
   imports: [
     BrowserModule,

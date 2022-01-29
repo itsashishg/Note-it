@@ -14,7 +14,7 @@ mat-sidenav {
   width: 15%;
 }
 
-.sidenav{
+.sidenav {
   height: 100%;
 }
 
@@ -23,4 +23,8 @@ mat-sidenav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.notesList {
+  width: 100%;
 }
