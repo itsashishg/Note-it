@@ -65,7 +65,7 @@ p {
 
 mat-toolbar .mat-toolbar-row,
 .mat-toolbar-single-row {
-  height: clamp(20px, 8%, 9%);
+  height: clamp(20px, 7%, 8%);
 }
 
 @media (max-width: 767px) {
@@ -156,4 +156,10 @@ a {
   #container {
     width: 50%;
   }
+}
+
+.mat-toolbar {
+  background: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  border-bottom: 1px solid #f2f2f2;
 }
