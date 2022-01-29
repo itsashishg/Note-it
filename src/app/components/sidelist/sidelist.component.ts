@@ -37,7 +37,7 @@ export class SidelistComponent implements OnInit {
 
   selectNote(row: Data) {
     this.start.currentNote = row;
-    this.start.wordsCount = row.content.length;
+    this.start.wordsCount = row.content.split(' ').length;
     this.start.noActionDone = true;
     this.start.showContent = true;
   }

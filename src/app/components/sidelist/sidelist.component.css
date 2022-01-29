@@ -15,15 +15,16 @@ mat-sidenav {
 }
 
 .sidenav {
-  /* height: 100%; */
+  height: 100%;
   padding: 0 0.2%;
 }
 
 .noNotesImg {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  width: 98%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .notesList {
@@ -76,5 +77,83 @@ mat-toolbar .mat-toolbar-row,
 @media screen and (min-width: 767px) and (max-width: 1070px) {
   mat-sidenav {
     width: 20%;
+  }
+}
+
+.sidenotes {
+  height: 90vh;
+  overflow: auto;
+}
+
+/* Button Styles */
+
+.button {
+  display: inline-flex;
+  height: 40px;
+  width: 80%;
+  border: 2px solid #bfc0c0;
+  margin: 20px 20px 20px 20px;
+  color: #595959;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+a {
+  color: #bfc0c0;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+#button-7 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#button-7 a {
+  position: relative;
+  left: 0;
+  transition: all 0.35s ease-Out;
+}
+
+#dub-arrow {
+  width: 100%;
+  height: 100%;
+  background: #d5d5d5;
+  left: -250px;
+  position: absolute;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease-Out;
+  bottom: 0;
+}
+
+#button-7 mat-icon {
+  width: 20px;
+  height: auto;
+  color: #000;
+}
+
+#button-7:hover #dub-arrow {
+  left: 0;
+}
+
+#button-7:hover a {
+  left: 150px;
+}
+
+@media screen and (min-width: 1000px) {
+  h1 {
+    font-size: 2.2em;
+  }
+  #container {
+    width: 50%;
   }
 }

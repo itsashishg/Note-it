@@ -2,7 +2,7 @@
     <mat-sidenav #drawer mode="side" class="sidenav" [attr.role]="(isHandset | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset | async) ? 'side' : 'side'" [opened]="(isHandset | async) === false">
         <div id="navbar" class="sidenav">
-            <div *ngIf="storedNotes.length !== 0;else no_content">
+            <div *ngIf="storedNotes.length !== 0;else no_content" class="sidenotes">
                 <div *ngFor="let note of storedNotes;let i=index" class="notesList my-1">
                     <div class="box-body" (click)="selectNote(note)">
                         <span>
@@ -32,6 +32,14 @@
                     <p>No stored notes found...</p>
                 </div>
             </ng-template>
+            <div class="text-center">
+                <div class="button" id="button-7">
+                    <div id="dub-arrow">
+                        <mat-icon>settings</mat-icon>
+                    </div>
+                    <a>Settings</a>
+                </div>
+            </div>
         </div>
     </mat-sidenav>
 
