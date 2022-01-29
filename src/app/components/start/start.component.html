@@ -10,18 +10,20 @@
                         <button mat-stroked-button (click)="save();sidelist.getStoredNotes()">Save</button>
                     </p>
                     <div>
-                        <quill-editor [modules]="toolbarConfigs" [(ngModel)]="currentNote.content"></quill-editor>
+                        <quill-editor [modules]="toolbarConfigs" (onEditorChanged)="changedEditor($event)"
+                            [(ngModel)]="currentNote.content"></quill-editor>
                     </div>
+                    <p class="wordCount">{{wordsCount}} words</p>
                 </div>
             </div>
         </div>
-        <div *ngIf="!noActionDone" #noActionBlock>
+        <div *ngIf="!noActionDone" #noActionBlock style="height: 95%;">
             <p class="header">
                 <span>Start Writing</span>
                 <span><button mat-flat-button (click)="noActionDone=true">Add</button></span>
             </p>
-            <div class="body mt-5">
-                <p class="text-center">Start writing something...</p>
+            <div class="body mt-5" style="height:100%">
+                <img src="./assets/images/4 Multitasking.svg" style="height: 90%;width: 90%;">
             </div>
         </div>
     </div>

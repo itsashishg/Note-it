@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EditorChangeContent, EditorChangeSelection } from 'ngx-quill';
 import { StorerService } from 'src/app/services/storer.service';
 
 export interface Data {
@@ -17,6 +18,7 @@ export class StartComponent implements OnInit {
   public currentNote: Data = { title: '', content: '' }
   public showContent: boolean = true;
   public noActionDone: boolean = false;
+  public wordsCount: number = 0;
   toolbarConfigs = {
     toolbar: [
       ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
@@ -60,6 +62,11 @@ export class StartComponent implements OnInit {
     let tmp = { title: this.currentNote.title, content: this.currentNote.content, date: new Date() };
     this.storedNotes.push(tmp);
     localStorage.setItem('notes', this.storerService.set('123456$#@$^@1ERF', JSON.stringify(this.storedNotes)));
+  }
+
+  changedEditor(event: EditorChangeContent | EditorChangeSelection) {
+    let tmp: string = event.editor.getText();
+    this.wordsCount = tmp.split(' ').length - 1;
   }
 
 }

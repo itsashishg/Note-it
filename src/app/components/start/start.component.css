@@ -49,3 +49,9 @@ p {
   position: relative;
   padding-left: 1rem;
 }
+
+.wordCount {
+  text-align: end;
+  font-weight: 300;
+  font-style: italic;
+}
