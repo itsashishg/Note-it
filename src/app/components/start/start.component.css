@@ -1,5 +1,5 @@
 .container-fluid {
-  height: 88%;
+  height: calc(100% - 64px);
 }
 
 mat-form-field {

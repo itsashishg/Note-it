@@ -61,3 +61,8 @@ mat-sidenav {
 p {
   margin-bottom: 0;
 }
+
+mat-toolbar .mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: clamp(20px, 8%, 9%);
+}
