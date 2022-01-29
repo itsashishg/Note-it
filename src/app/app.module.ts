@@ -16,13 +16,17 @@ import { MatInputModule } from '@angular/material/input';
 import { QuillModule } from 'ngx-quill';
 import { SubstrPipe } from './services/substr.pipe';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { SettingsComponent } from './components/settings/settings.component';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartComponent,
     SidelistComponent,
-    SubstrPipe
+    SubstrPipe,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatInputModule,
     QuillModule.forRoot(),
     MatMenuModule,
+    MatBottomSheetModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

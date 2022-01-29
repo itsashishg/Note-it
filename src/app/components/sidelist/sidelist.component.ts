@@ -4,6 +4,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { StorerService } from 'src/app/services/storer.service';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { SettingsComponent } from '../settings/settings.component';
 
 @Component({
   selector: 'app-sidelist',
@@ -17,7 +19,7 @@ export class SidelistComponent implements OnInit {
   storedNotes: Data[] = [];
 
   isHandset: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(map(result => result.matches), shareReplay());
-  constructor(private breakpointObserver: BreakpointObserver, private start: StartComponent, private storerService: StorerService) { }
+  constructor(private breakpointObserver: BreakpointObserver, private start: StartComponent, private storerService: StorerService, private bottomSheet: MatBottomSheet) { }
 
   ngOnInit() {
     this.getStoredNotes();
@@ -46,5 +48,9 @@ export class SidelistComponent implements OnInit {
     console.log('Delete', index);
     this.storedNotes.splice(index, 1);
     localStorage.setItem('notes', this.storerService.set('123456$#@$^@1ERF', JSON.stringify(this.storedNotes)));
+  }
+
+  openSettings() {
+    this.bottomSheet.open(SettingsComponent);
   }
 }
