@@ -33,7 +33,7 @@ p {
 }
 
 ::ng-deep .ql-container {
-  min-height: 700px;
+  /* min-height: 700px; */
   height: auto;
 }
 
@@ -51,6 +51,9 @@ p {
 }
 
 .wordCount {
+  position: fixed;
+  right: 10px;
+  bottom: 5px;
   text-align: end;
   font-weight: 300;
   font-style: italic;

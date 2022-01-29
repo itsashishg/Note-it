@@ -1,8 +1,9 @@
 # NoteIt
 
-Side Project to make notes offline.
-    Start Date: Jan 27th,2022.
+Side Project to make notes offline.  
+Start Date: Jan 27th,2022.
 
+---
 ## Features
 
 - Stores your notes locally (encrypted).
