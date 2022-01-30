@@ -89,7 +89,7 @@ mat-toolbar .mat-toolbar-row,
 
 .button {
   display: inline-flex;
-  height: 40px;
+  height: 3.5em;
   width: 80%;
   border: 2px solid #bfc0c0;
   margin: 20px 20px 20px 20px;
@@ -162,4 +162,12 @@ a {
   background: #fff;
   color: rgba(0, 0, 0, 0.87);
   border-bottom: 1px solid #f2f2f2;
+}
+
+.heading h2 {
+  font-size: 1.1em;
+}
+
+.noNotesImg p{
+  font-size: 1em;
 }
