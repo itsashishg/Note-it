@@ -11,7 +11,7 @@ export class SubstrPipe implements PipeTransform {
     }
     let without_html = text.replace(/<(?:.|\n)*?>/gm, '');
 
-    return without_html.substring(0,10).concat('...');
+    return without_html.substring(0,35).concat('...');
   }
 
 }

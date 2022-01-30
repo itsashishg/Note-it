@@ -20,7 +20,7 @@ mat-sidenav {
 }
 
 .noNotesImg {
-  height: calc(100% - 85px);
+  height: calc(100% - 125px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,9 +30,7 @@ mat-sidenav {
 .notesList {
   width: 100%;
   display: flex;
-  border: 1px solid;
-  padding: 1%;
-  /* margin: 2.5% 0; */
+  padding: 5%;
 }
 
 .box-body {
@@ -81,7 +79,7 @@ mat-toolbar .mat-toolbar-row,
 }
 
 .sidenotes {
-  height: calc(100% - 85px);
+  height: calc(100% - 125px);
   overflow: auto;
 }
 
@@ -168,6 +166,26 @@ a {
   font-size: 1.1em;
 }
 
-.noNotesImg p{
+.noNotesImg p {
   font-size: 1em;
+}
+
+.selectedNoteList {
+  width: 100%;
+  display: flex;
+  padding: 5%;
+  background-color: #eaeaea;
+  border-radius: 1em;
+}
+
+.sidelist-hdr {
+  vertical-align: middle;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.sidelist-heading {
+  display: block;
+  width: 100%;
+  margin: auto;
 }

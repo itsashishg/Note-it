@@ -2,14 +2,22 @@
     <mat-sidenav #drawer mode="side" class="sidenav" [attr.role]="(isHandset | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset | async) ? 'side' : 'side'" [opened]="(isHandset | async) === false">
         <div id="navbar" class="sidenav">
+            <div class="row sidelist-heading">
+                <button mat-icon-button (click)="drawer.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <span class="sidelist-hdr"> Notes</span>
+            </div>
             <div *ngIf="storedNotes.length !== 0;else no_content" class="sidenotes">
-                <div *ngFor="let note of storedNotes;let i=index" class="notesList my-1">
+                <div *ngFor="let note of storedNotes;let i=index" class="my-1"
+                    [ngClass]="selectedNoteId === i+1 ? 'selectedNoteList' : 'notesList' ">
                     <div class="box-body" (click)="selectNote(note)">
                         <span>
                             <p class="box-body-title">{{note.title}}</p>
-                            <p class="box-body-date">{{note.date | date:'medium'}}</p>
+                            <span>{{note.content | substr}}</span>
                         </span>
-                        <span>{{note.content | substr}}</span>
+                        
+                        <p class="box-body-date">{{note.date | date:'medium'}}</p>
                     </div>
                     <div class="box-option">
                         <mat-icon [matMenuTriggerFor]="menu">more_vert</mat-icon>

@@ -6,6 +6,7 @@ export interface Data {
   title: string;
   content: string;
   date?: Date;
+  id: number;
 }
 
 @Component({
@@ -15,7 +16,7 @@ export interface Data {
 })
 export class StartComponent implements OnInit {
   storedNotes: Data[] = [];
-  public currentNote: Data = { title: '', content: '' }
+  public currentNote: Data = { title: '', content: '', id: 0 }
   public showContent: boolean = true;
   public noActionDone: boolean = false;
   public wordsCount: number = 0;
@@ -59,7 +60,7 @@ export class StartComponent implements OnInit {
   }
 
   save() {
-    let tmp = { title: this.currentNote.title, content: this.currentNote.content, date: new Date() };
+    let tmp: Data = { title: this.currentNote.title, content: this.currentNote.content, date: new Date(), id: this.storedNotes.length + 1 };
     this.storedNotes.push(tmp);
     localStorage.setItem('notes', this.storerService.set('123456$#@$^@1ERF', JSON.stringify(this.storedNotes)));
   }
