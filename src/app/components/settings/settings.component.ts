@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SwitchThemeService } from 'src/app/services/switch-theme.service';
 
 @Component({
   selector: 'app-settings',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent {
+
+  isDarkMode: boolean = false;
+  constructor(private mode: SwitchThemeService) { }
 
   clearAllNotes() {
     document.getElementById('delButton')?.addEventListener('click', e => {
@@ -17,5 +21,10 @@ export class SettingsComponent {
     });
     localStorage.removeItem('notes');
     window.location.reload();
+  }
+
+  switchTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    this.mode.switchMode(!this.isDarkMode);
   }
 }

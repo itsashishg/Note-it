@@ -1,6 +1,7 @@
 .container-fluid {
   height: calc(100% - 12%);
   padding: 0;
+  background: var(--background-default);
 }
 
 mat-form-field {
