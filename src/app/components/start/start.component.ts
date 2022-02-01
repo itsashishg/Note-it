@@ -1,5 +1,8 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { EditorChangeContent, EditorChangeSelection } from 'ngx-quill';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { StorerService } from 'src/app/services/storer.service';
 
 export interface Data {
@@ -41,7 +44,27 @@ export class StartComponent implements OnInit {
     ]
   };
 
-  constructor(private storerService: StorerService) { }
+  //To get mobile support
+  destroyed = new Subject<void>();
+  displayNameMap = new Map([[Breakpoints.XSmall, 'XSmall'], [Breakpoints.Small, 'Small'], [Breakpoints.Medium, 'Medium'], [Breakpoints.Large, 'Large'], [Breakpoints.XLarge, 'XLarge'],
+  ]);
+
+  constructor(private storerService: StorerService, private breakpointObserver: BreakpointObserver) {
+    breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge,])
+      .pipe(takeUntil(this.destroyed))
+      .subscribe(result => {
+        for (const query of Object.keys(result.breakpoints)) {
+          if (result.breakpoints[query]) {
+            if ((this.displayNameMap.get(query) == 'Small' || this.displayNameMap.get(query) == 'XSmall')) {
+              this.defaultTheme = (this.displayNameMap.get(query) == 'Small' || this.displayNameMap.get(query) == 'XSmall') ? 'bubble' : 'snow'
+              this.toolbarConfigs = {
+                toolbar: [['bold', 'italic', 'underline', 'strike'], ['blockquote'], [{ 'list': 'ordered' }, { 'list': 'bullet' }], [{ 'script': 'sub' }, { 'script': 'super' }], [{ 'indent': '-1' }, { 'indent': '+1' }], [{ 'size': ['small', false, 'large', 'huge'] }], [{ 'header': [1, 2, 3, 4, 5, 6, false] }], [{ 'color': [] }, { 'background': [] }], [{ 'align': [] }], ['clean']]
+              };
+            }
+          }
+        }
+      });
+  }
 
   ngOnInit() {
     this.getStoredNotes();
@@ -83,6 +106,11 @@ export class StartComponent implements OnInit {
   changedEditor(event: EditorChangeContent | EditorChangeSelection) {
     let tmp: string = event.editor.getText();
     this.wordsCount = tmp.split(' ').length;
+  }
+
+  ngOnDestroy() {
+    this.destroyed.next();
+    this.destroyed.complete();
   }
 
 }

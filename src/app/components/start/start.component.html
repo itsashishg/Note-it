@@ -5,7 +5,8 @@
                 <div>
                     <p class="title-header">
                         <mat-form-field [floatLabel]="'never'">
-                            <input matInput placeholder="Title of your masterpiece" [(ngModel)]="currentNote.title">
+                            <mat-label>Title of your masterpiece</mat-label>
+                            <input matInput [(ngModel)]="currentNote.title">
                         </mat-form-field>
                         <span>
                             <button class="mx-1" mat-stroked-button
