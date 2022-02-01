@@ -21,6 +21,7 @@ export class StartComponent implements OnInit {
   public noActionDone: boolean = false;
   public wordsCount: number = 0;
   public currentNoteId: number = 1;
+  public defaultTheme: string = 'snow';
   toolbarConfigs = {
     toolbar: [
       ['bold', 'italic', 'underline', 'strike'],        // toggled buttons

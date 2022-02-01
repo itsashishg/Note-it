@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Data, StartComponent } from '../start/start.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+import { map, shareReplay, takeUntil } from 'rxjs/operators';
 import { StorerService } from 'src/app/services/storer.service';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { SettingsComponent } from '../settings/settings.component';
@@ -20,8 +20,24 @@ export class SidelistComponent implements OnInit {
   public selectedNoteId: number = -5;
   hideToggle: boolean = false;
 
+  //To get mobile support
+  destroyed = new Subject<void>();
+  displayNameMap = new Map([[Breakpoints.XSmall, 'XSmall'], [Breakpoints.Small, 'Small'], [Breakpoints.Medium, 'Medium'], [Breakpoints.Large, 'Large'], [Breakpoints.XLarge, 'XLarge'],
+  ]);
+
   isHandset: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(map(result => result.matches), shareReplay());
-  constructor(private breakpointObserver: BreakpointObserver, private start: StartComponent, private storerService: StorerService, private bottomSheet: MatBottomSheet) { }
+  constructor(private breakpointObserver: BreakpointObserver, private start: StartComponent, private storerService: StorerService, private bottomSheet: MatBottomSheet) {
+    breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge,])
+      .pipe(takeUntil(this.destroyed))
+      .subscribe(result => {
+        for (const query of Object.keys(result.breakpoints)) {
+          if (result.breakpoints[query]) {
+            let tmp: string = (this.displayNameMap.get(query) == 'Small' || this.displayNameMap.get(query) == 'XSmall') ? 'bubble' : 'snow';
+            start.defaultTheme = tmp;
+          }
+        }
+      });
+  }
 
   ngOnInit() {
     this.getStoredNotes();
@@ -56,5 +72,10 @@ export class SidelistComponent implements OnInit {
 
   openSettings() {
     this.bottomSheet.open(SettingsComponent);
+  }
+
+  ngOnDestroy() {
+    this.destroyed.next();
+    this.destroyed.complete();
   }
 }

@@ -8,15 +8,17 @@
                             <input matInput placeholder="Title of your masterpiece" [(ngModel)]="currentNote.title">
                         </mat-form-field>
                         <span>
-                            <button class="mx-3" mat-stroked-button (click)="save();sidelist.getStoredNotes()">Save</button>
-                            <button mat-fab class="mx-3" (click)="newNote();sidelist.selectedNoteId=-2">
+                            <button class="mx-1" mat-stroked-button
+                                (click)="save();sidelist.getStoredNotes()">Save</button>
+                            <button mat-fab class="mx-1 mat-elevation-z0"
+                                (click)="newNote();sidelist.selectedNoteId=-2">
                                 <mat-icon>add</mat-icon>
                             </button>
                         </span>
                     </p>
                     <div>
-                        <quill-editor [modules]="toolbarConfigs" (onEditorChanged)="changedEditor($event)"
-                            [(ngModel)]="currentNote.content"></quill-editor>
+                        <quill-editor [theme]="defaultTheme" [modules]="toolbarConfigs"
+                            (onEditorChanged)="changedEditor($event)" [(ngModel)]="currentNote.content"></quill-editor>
                     </div>
                     <p class="wordCount">{{wordsCount}} words</p>
                 </div>
