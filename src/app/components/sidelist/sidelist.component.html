@@ -1,9 +1,9 @@
 <mat-sidenav-container autosize [hasBackdrop]="false">
     <mat-sidenav #drawer mode="side" class="sidenav" [attr.role]="(isHandset | async) ? 'dialog' : 'navigation'"
-        [mode]="(isHandset | async) ? 'side' : 'side'" [opened]="(isHandset | async) === false">
+        [mode]="(isHandset | async) ? 'over' : 'side'" [opened]="(isHandset | async) === false">
         <div id="navbar" class="sidenav">
             <div class="row sidelist-heading">
-                <button mat-icon-button (click)="drawer.toggle()">
+                <button mat-icon-button (click)="drawer.toggle();hideToggle = !hideToggle">
                     <mat-icon>menu</mat-icon>
                 </button>
                 <span class="sidelist-hdr"> Notes</span>
@@ -52,8 +52,8 @@
     </mat-sidenav>
 
     <mat-toolbar>
-        <button *ngIf="(isHandset | async) === true" type="button" aria-label="Toggle sidenav" mat-icon-button
-            (click)="drawer.toggle()">
+        <button *ngIf="((isHandset | async) === true) || hideToggle" type="button" aria-label="Toggle sidenav" mat-icon-button
+            (click)="drawer.toggle();hideToggle = !hideToggle">
             <mat-icon>menu</mat-icon>
         </button>
 
@@ -62,5 +62,5 @@
         </div>
     </mat-toolbar>
 
-    <ng-content (click)="drawer.toggle()"></ng-content>
+    <ng-content></ng-content>
 </mat-sidenav-container>

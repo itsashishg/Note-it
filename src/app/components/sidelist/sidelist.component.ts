@@ -18,6 +18,7 @@ export class SidelistComponent implements OnInit {
   data!: Data;
   storedNotes: Data[] = [];
   selectedNoteId: number = -5;
+  hideToggle: boolean = false;
 
   isHandset: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(map(result => result.matches), shareReplay());
   constructor(private breakpointObserver: BreakpointObserver, private start: StartComponent, private storerService: StorerService, private bottomSheet: MatBottomSheet) { }
