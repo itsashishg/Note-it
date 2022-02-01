@@ -17,7 +17,7 @@ export class SidelistComponent implements OnInit {
   isExpanded: boolean = true;
   data!: Data;
   storedNotes: Data[] = [];
-  selectedNoteId: number = -5;
+  public selectedNoteId: number = -5;
   hideToggle: boolean = false;
 
   isHandset: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(map(result => result.matches), shareReplay());
@@ -42,6 +42,7 @@ export class SidelistComponent implements OnInit {
   selectNote(row: Data) {
     this.start.currentNote = row;
     this.selectedNoteId = row.id;
+    this.start.currentNoteId = row.id;
     this.start.wordsCount = row.content.split(' ').length;
     this.start.noActionDone = true;
     this.start.showContent = true;

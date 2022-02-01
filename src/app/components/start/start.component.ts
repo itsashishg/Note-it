@@ -20,6 +20,7 @@ export class StartComponent implements OnInit {
   public showContent: boolean = true;
   public noActionDone: boolean = false;
   public wordsCount: number = 0;
+  public currentNoteId: number = 1;
   toolbarConfigs = {
     toolbar: [
       ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
@@ -57,12 +58,25 @@ export class StartComponent implements OnInit {
     if (fetchedFromStorage !== null) {
       this.storedNotes = JSON.parse(this.storerService.get('123456$#@$^@1ERF', fetchedFromStorage));
     }
+    this.currentNoteId = this.storedNotes.length;
   }
 
   save() {
-    let tmp: Data = { title: this.currentNote.title, content: this.currentNote.content, date: new Date(), id: this.storedNotes.length + 1 };
-    this.storedNotes.push(tmp);
+    let index = this.storedNotes.findIndex(e => e.id == this.currentNoteId);
+    if (index !== -1) {
+      let tmp: Data = { title: this.currentNote.title, content: this.currentNote.content, date: new Date(), id: this.currentNoteId };
+      this.storedNotes[index] = tmp;
+    }
+    else {
+      let tmp: Data = { title: this.currentNote.title, content: this.currentNote.content, date: new Date(), id: this.currentNoteId };
+      this.storedNotes.push(tmp);
+    }
     localStorage.setItem('notes', this.storerService.set('123456$#@$^@1ERF', JSON.stringify(this.storedNotes)));
+  }
+
+  newNote() {
+    this.currentNoteId = this.currentNoteId + 1;
+    this.currentNote = { title: '', content: '', date: new Date(), id: this.currentNoteId };
   }
 
   changedEditor(event: EditorChangeContent | EditorChangeSelection) {
