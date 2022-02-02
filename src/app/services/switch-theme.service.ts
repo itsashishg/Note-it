@@ -38,6 +38,7 @@ export var light: Mode = {
     "--bg-color": "#fff",
     "--border-color": "1px solid #f2f2f2",
     "--font-color": "#000",
+    "--quill-toolbar-color": "#fff",
   }
 };
 
@@ -47,5 +48,6 @@ export var dark: Mode = {
     "--bg-color": "#233541",
     "--border-color": "1px solid #ff4e4e",
     "--font-color": "#fff",
+    "--quill-toolbar-color": "#fff",
   }
 };

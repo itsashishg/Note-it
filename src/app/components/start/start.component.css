@@ -42,6 +42,7 @@ p {
 
 ::ng-deep .ql-toolbar.ql-snow {
   border: none;
+  background-color: var(--quill-toolbar-color);
 }
 
 ::ng-deep .ql-container.ql-snow {
