@@ -9,16 +9,7 @@ body {
 }
 
 :root {
-  --background-default: #dde1e7;
-  --card-background-default: #dde1e7;
-  --background-tertiary-shadow: -3px -3px 7px #ffffff73,
-    2px 2px 5px rgba(94, 104, 121, 0.288);
-  --mat-button-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
-  --mat-button-shadow-hover: inset 2px 2px 5px #babecc,
-    inset -5px -5px 10px #ffffff73;
-  --primary-font-color: #595959;
-  --secondary-font-color: "#595959";
-  --inner-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
-  --active-status: #467d1d;
-  --stop-status: red;
+  --bg-color: #fff;
+  --border-color: 1px solid #f2f2f2;
+  --font-color: #000;
 }

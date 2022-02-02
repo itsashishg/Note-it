@@ -17,6 +17,7 @@ mat-sidenav {
 .sidenav {
   height: 100%;
   padding: 0 0.2%;
+  background-color: var(--bg-color);
 }
 
 .noNotesImg {
@@ -25,6 +26,7 @@ mat-sidenav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--font-color);
 }
 
 .notesList {
@@ -157,13 +159,14 @@ a {
 }
 
 .mat-toolbar {
-  background: #fff;
+  background: var(--bg-color);
   color: rgba(0, 0, 0, 0.87);
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: var(--border-color);
 }
 
 .heading h2 {
   font-size: 1.1em;
+  color: var(--font-color);
 }
 
 .noNotesImg p {
@@ -182,10 +185,24 @@ a {
   vertical-align: middle;
   font-size: 20px;
   font-weight: 500;
+  color: var(--font-color);
 }
 
 .sidelist-heading {
   display: block;
   width: 100%;
   margin: auto;
+}
+
+::ng-deep .mat-drawer-content {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  background: var(--bg-color) !important;
+}
+
+::ng-deep .mat-drawer-side {
+  border-right: var(--border-color);
 }
