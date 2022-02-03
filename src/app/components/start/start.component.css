@@ -74,3 +74,20 @@ p {
 .mat-mini-fab.mat-accent {
   background-color: #bebebe;
 }
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: var(--font-color);
+}
+
+::ng-deep .ql-editor.ql-blank::before {
+  color: var(--font-color);
+  font-size: 1.2em;
+  content: attr(data-placeholder);
+  font-style: italic;
+  pointer-events: none;
+  position: absolute;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+  color: var(--font-color);
+}

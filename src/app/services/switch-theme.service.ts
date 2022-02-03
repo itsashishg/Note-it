@@ -45,8 +45,8 @@ export var light: Mode = {
 export var dark: Mode = {
   name: "dark",
   properties: {
-    "--bg-color": "#233541",
-    "--border-color": "1px solid #ff4e4e",
+    "--bg-color": "#1B262C",
+    "--border-color": "1px solid #626262",
     "--font-color": "#fff",
     "--quill-toolbar-color": "#fff",
   }

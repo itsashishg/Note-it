@@ -9,8 +9,8 @@
                             <input matInput [(ngModel)]="currentNote.title">
                         </mat-form-field>
                         <span>
-                            <button class="mx-1" mat-stroked-button
-                                (click)="save();sidelist.getStoredNotes()">Save</button>
+                            <button class="mx-1" mat-stroked-button (click)="save();sidelist.getStoredNotes()"
+                                style="border-color: var(--border-color) !important;">Save</button>
                             <button mat-fab class="mx-1 mat-elevation-z0"
                                 (click)="newNote();sidelist.selectedNoteId=-2">
                                 <mat-icon>add</mat-icon>
