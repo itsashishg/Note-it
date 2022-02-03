@@ -15,12 +15,14 @@ export class SwitchThemeService {
       let active = dark;
       Object.keys(active.properties).forEach(property => {
         document.documentElement.style.setProperty(property, active.properties[property]);
+        localStorage.setItem('mode', 'dark');
       });
     }
     else {
       let active = light;
       Object.keys(active.properties).forEach(property => {
         document.documentElement.style.setProperty(property, active.properties[property]);
+        localStorage.setItem('mode', 'light');
       });
     }
   }

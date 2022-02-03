@@ -4,6 +4,7 @@ import { EditorChangeContent, EditorChangeSelection } from 'ngx-quill';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { StorerService } from 'src/app/services/storer.service';
+import { SwitchThemeService } from 'src/app/services/switch-theme.service';
 
 export interface Data {
   title: string;
@@ -49,7 +50,7 @@ export class StartComponent implements OnInit {
   displayNameMap = new Map([[Breakpoints.XSmall, 'XSmall'], [Breakpoints.Small, 'Small'], [Breakpoints.Medium, 'Medium'], [Breakpoints.Large, 'Large'], [Breakpoints.XLarge, 'XLarge'],
   ]);
 
-  constructor(private storerService: StorerService, private breakpointObserver: BreakpointObserver) {
+  constructor(private storerService: StorerService, private breakpointObserver: BreakpointObserver, private modeService: SwitchThemeService) {
     breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge,])
       .pipe(takeUntil(this.destroyed))
       .subscribe(result => {
@@ -68,6 +69,7 @@ export class StartComponent implements OnInit {
 
   ngOnInit() {
     this.getStoredNotes();
+    this.setDefaultTheme();
   }
 
   isContentFilled() {
@@ -113,4 +115,15 @@ export class StartComponent implements OnInit {
     this.destroyed.complete();
   }
 
+  setDefaultTheme() {
+    let tmp = localStorage.getItem('mode');
+    if (tmp !== null) {
+      if (tmp === 'dark') {
+        this.modeService.switchMode(true);
+      }
+      else if (tmp === 'light') {
+        this.modeService.switchMode(false);
+      }
+    }
+  }
 }
