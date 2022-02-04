@@ -18,6 +18,7 @@ mat-sidenav {
   height: 100%;
   padding: 0 0.2%;
   background-color: var(--bg-color);
+  transition: background-color 500ms;
 }
 
 .noNotesImg {
@@ -27,6 +28,7 @@ mat-sidenav {
   justify-content: center;
   align-items: center;
   color: var(--font-color);
+  transition: color 500ms;
 }
 
 .notesList {
@@ -34,6 +36,7 @@ mat-sidenav {
   display: flex;
   padding: 5%;
   color: var(--font-color);
+  transition: color 500ms;
 }
 
 .box-body {
@@ -108,6 +111,7 @@ a {
   color: var(--font-color);
   text-decoration: none;
   letter-spacing: 1px;
+  transition: color 500ms;
 }
 
 #button-7 {
@@ -121,6 +125,7 @@ a {
   left: 0;
   transition: all 0.35s ease-Out;
   color: var(--font-color);
+  transition: color 500ms;
 }
 
 #dub-arrow {
@@ -161,14 +166,16 @@ a {
 }
 
 .mat-toolbar {
-  background: var(--bg-color);
+  background-color: var(--bg-color);
   color: rgba(0, 0, 0, 0.87);
   border-bottom: var(--border-color);
+  transition: background-color 500ms;
 }
 
 .heading h2 {
   font-size: 1.1em;
   color: var(--font-color);
+  transition: color 500ms;
 }
 
 .noNotesImg p {
@@ -188,6 +195,7 @@ a {
   font-size: 20px;
   font-weight: 500;
   color: var(--font-color);
+  transition: color 500ms;
 }
 
 .sidelist-heading {
@@ -195,6 +203,7 @@ a {
   width: 100%;
   margin: auto;
   color: var(--font-color);
+  transition: color 500ms;
 }
 
 ::ng-deep .mat-drawer-content {
@@ -203,7 +212,8 @@ a {
   display: block;
   height: 100%;
   overflow: auto;
-  background: var(--bg-color) !important;
+  background-color: var(--bg-color) !important;
+  transition: background-color 500ms;
 }
 
 ::ng-deep .mat-drawer-side {
@@ -212,4 +222,5 @@ a {
 
 ::ng-deep .mat-drawer-container {
   color: var(--font-color);
+  transition: color 500ms;
 }

@@ -1,7 +1,8 @@
 .container-fluid {
   height: calc(100% - 12%);
   padding: 0;
-  background: var(--bg-color);
+  background-color: var(--bg-color);
+  transition: background-color 500ms ;
 }
 
 mat-form-field {
@@ -14,14 +15,16 @@ mat-form-field {
   align-items: center;
   padding: 0.2rem 16px;
   margin: 0;
-  background: var(--bg-color);
+  background-color: var(--bg-color);
   color: var(--font-color);
+  transition: background-color 500ms , color 500ms;
 }
 
 .notes-body {
   height: 100%;
   width: 100%;
   background-color: var(--bg-color);
+  transition: background-color 500ms ;
   padding: 1rem;
 }
 
@@ -43,6 +46,7 @@ p {
 ::ng-deep .ql-toolbar.ql-snow {
   border: none;
   background-color: var(--quill-toolbar-color);
+  transition: background-color 500ms ;
 }
 
 ::ng-deep .ql-container.ql-snow {
@@ -77,6 +81,7 @@ p {
 
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
   background-color: var(--font-color);
+  transition: background-color 500ms ;
 }
 
 ::ng-deep .ql-editor.ql-blank::before {
@@ -86,8 +91,10 @@ p {
   font-style: italic;
   pointer-events: none;
   position: absolute;
+  transition: color 500ms ;
 }
 
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
   color: var(--font-color);
+  transition: color 500ms ;
 }
