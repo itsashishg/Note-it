@@ -302,3 +302,9 @@
   color: var(--font-color);
   transition: color 500ms;
 }
+
+.switchButton {
+  width: 29%;
+  color: #fff;
+  background-color: #2b3044;
+}
