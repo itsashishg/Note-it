@@ -10,7 +10,7 @@
             </div>
             <div *ngIf="storedNotes.length !== 0;else no_content" class="sidenotes">
                 <div *ngFor="let note of storedNotes;let i=index" class="my-1"
-                    [ngClass]="selectedNoteId === i ? 'selectedNoteList' : 'notesList' ">
+                    [ngClass]="selectedNoteId === note.id ? 'selectedNoteList' : 'notesList' ">
                     <div class="box-body" (click)="selectNote(note)">
                         <span>
                             <p class="box-body-title">{{note.title}}</p>

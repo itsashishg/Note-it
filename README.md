@@ -12,5 +12,5 @@ Start Date: Jan 27th,2022.
 - Priority and Folder options (Future update).
 - Share notes (Future update).
 - Styling options.
-- Dark mode (Future update).
+- Dark mode.
 - Hide notes (Future update).
