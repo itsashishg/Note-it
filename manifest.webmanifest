@@ -1,0 +1,17 @@
+{
+  "name": "note-it",
+  "short_name": "note-it",
+  "theme_color": "#c2c2c2",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "assets/images/note-it.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
