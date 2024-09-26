@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1727377324472,
+  "timestamp": 1727379576690,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -42,6 +42,11 @@
         "/assets/images/share.svg",
         "/assets/images/side-list.svg",
         "/assets/pwa/mobile.png",
+        "/assets/pwa/note-it-128.png",
+        "/assets/pwa/note-it-144.png",
+        "/assets/pwa/note-it-192.png",
+        "/assets/pwa/note-it-72.png",
+        "/assets/pwa/note-it-96.png",
         "/assets/pwa/web.png"
       ],
       "patterns": []
@@ -56,18 +61,23 @@
     "/assets/images/main-page.svg": "bb9b6f80e7a4aaf428c271e774e9813ecc5b19bc",
     "/assets/images/more_vert.svg": "08e2a666a9895d41f0e160c1e1c2db799e623d33",
     "/assets/images/note-it-fav.png": "b9b2eb4055cbfb4a26b465a4eb708ab50336d256",
-    "/assets/images/note-it.png": "1fe5f66843ef088bfccfb63945df32edaf8f133c",
+    "/assets/images/note-it.png": "c968fbb39e3a7af299f9f96888d7c90c35493c06",
     "/assets/images/save.svg": "28b53537fee1044902b5dc81b9f8490c3a9be0f4",
     "/assets/images/settings.svg": "f5f3cd8d3efbe65b306f80b45e491f911cfbce5e",
     "/assets/images/share.svg": "3813fd78a98218252469c7fd7a56e4a1b8ed454d",
     "/assets/images/side-list.svg": "22edd65ee4aa38aa94a5e0790414a1d95598b2a5",
     "/assets/pwa/mobile.png": "12d2207b9dc9aa3fd722f66af0e3fdec6969cb73",
+    "/assets/pwa/note-it-128.png": "f74e34ccc6c9339c84fb942752a5593cd38390ed",
+    "/assets/pwa/note-it-144.png": "c5727bba92e1fcfcf0d445caca9214d2ba5ef0dc",
+    "/assets/pwa/note-it-192.png": "0c7620bb0336ac641a7f012dff1d12bfffd04607",
+    "/assets/pwa/note-it-72.png": "bd721e6d059a20d446c922b547955a1694132e55",
+    "/assets/pwa/note-it-96.png": "fee0ba4afe0e7cf0746aa996760229207f05703f",
     "/assets/pwa/web.png": "a133d507a63f99634621a70048f3ee5d7d78d4e2",
     "/chunk-7QOL3CDH.js": "6f91b580701a41da49fd5886629b250ca6825e6e",
     "/chunk-HSVVFAFB.js": "3c2a76e6ffda8012bc28961dde02aba2f2f129f5",
     "/index.html": "1f0791d8b7b1e8ed05452ca213ca62b5beb20735",
     "/main-VTXHM4CF.js": "718262c56bb7e6e5fdfbe1aeca818fde122bc93e",
-    "/manifest.webmanifest": "03013a95cd8d1ee2695227f8b4a876a602728820",
+    "/manifest.webmanifest": "996c4389f43fa2c9ecb1661db211135832029482",
     "/polyfills-SCHOHYNV.js": "d45c76c5960bab3ace7fd6d211b9579456241f8a",
     "/styles-TATNZIBC.css": "4e21c098b8bbab68083ea6da61a74b0d6d6c65fc"
   },

@@ -2,7 +2,7 @@
   "name": "note-it",
   "short_name": "note-it",
   "description": "Your daily note taking app.",
-  "theme_color": "#c2c2c2",
+  "theme_color": "#303030",
   "background_color": "#fafafa",
   "display_override": ["window-control-overlay", "minimal-ui"],
   "display": "minimal-ui",
@@ -10,27 +10,27 @@
   "start_url": "./",
   "icons": [
     {
-      "src": "./assets/images/note-it.png",
+      "src": "./assets/pwa/note-it-72.png",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "./assets/images/note-it.png",
+      "src": "./assets/pwa/note-it-96.png",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "./assets/images/note-it.png",
+      "src": "./assets/pwa/note-it-128.png",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "./assets/images/note-it.png",
+      "src": "./assets/pwa/note-it-144.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "./assets/images/note-it.png",
+      "src": "./assets/pwa/note-it-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
@@ -42,13 +42,13 @@
   ],
   "screenshots": [
     {
-      "src": "./assets/images/pwa/mobile.png",
+      "src": "./assets/pwa/mobile.png",
       "type": "image/png",
       "sizes": "540x720",
       "form_factor": "narrow"
     },
     {
-      "src": "./assets/images/pwa/web.png",
+      "src": "./assets/pwa/web.png",
       "type": "image/jpg",
       "sizes": "720x540",
       "form_factor": "wide"
