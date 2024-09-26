@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1726943727690,
+  "timestamp": 1727377324472,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -11,10 +11,10 @@
         "ignoreVary": true
       },
       "urls": [
-        "/chunk-6J3AK5BO.js",
-        "/chunk-YHHOURWT.js",
+        "/chunk-7QOL3CDH.js",
+        "/chunk-HSVVFAFB.js",
         "/index.html",
-        "/main-UURIUQ2H.js",
+        "/main-VTXHM4CF.js",
         "/manifest.webmanifest",
         "/polyfills-SCHOHYNV.js",
         "/styles-TATNZIBC.css"
@@ -40,7 +40,9 @@
         "/assets/images/save.svg",
         "/assets/images/settings.svg",
         "/assets/images/share.svg",
-        "/assets/images/side-list.svg"
+        "/assets/images/side-list.svg",
+        "/assets/pwa/mobile.png",
+        "/assets/pwa/web.png"
       ],
       "patterns": []
     }
@@ -59,11 +61,13 @@
     "/assets/images/settings.svg": "f5f3cd8d3efbe65b306f80b45e491f911cfbce5e",
     "/assets/images/share.svg": "3813fd78a98218252469c7fd7a56e4a1b8ed454d",
     "/assets/images/side-list.svg": "22edd65ee4aa38aa94a5e0790414a1d95598b2a5",
-    "/chunk-6J3AK5BO.js": "3077217f7e3357934d5abde6e01d96b754786d33",
-    "/chunk-YHHOURWT.js": "29112de8c60fda4b67e26319ae92d86d83b96521",
-    "/index.html": "6ba7b41708097dbb2f25c9bf0387647e98e9d5d8",
-    "/main-UURIUQ2H.js": "287ba58292bbddd136a353d8d35076f2a207c5d4",
-    "/manifest.webmanifest": "b2036815eb690abbc1f75e82b0b0810b518b83d7",
+    "/assets/pwa/mobile.png": "12d2207b9dc9aa3fd722f66af0e3fdec6969cb73",
+    "/assets/pwa/web.png": "a133d507a63f99634621a70048f3ee5d7d78d4e2",
+    "/chunk-7QOL3CDH.js": "6f91b580701a41da49fd5886629b250ca6825e6e",
+    "/chunk-HSVVFAFB.js": "3c2a76e6ffda8012bc28961dde02aba2f2f129f5",
+    "/index.html": "1f0791d8b7b1e8ed05452ca213ca62b5beb20735",
+    "/main-VTXHM4CF.js": "718262c56bb7e6e5fdfbe1aeca818fde122bc93e",
+    "/manifest.webmanifest": "03013a95cd8d1ee2695227f8b4a876a602728820",
     "/polyfills-SCHOHYNV.js": "d45c76c5960bab3ace7fd6d211b9579456241f8a",
     "/styles-TATNZIBC.css": "4e21c098b8bbab68083ea6da61a74b0d6d6c65fc"
   },
